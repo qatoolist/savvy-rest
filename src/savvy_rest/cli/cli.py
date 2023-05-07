@@ -1,12 +1,14 @@
 """CLI commands for managing savvy-rest projects."""
-
 from pathlib import Path
-from typing import Any, Callable, TypeVar
+from typing import Any
+from typing import Callable
+from typing import TypeVar
 
 import typer
 from typing_extensions import Annotated
 
-from .cli_manager import CLIManager, ProjectExistsError
+from .cli_manager import CLIManager
+from .cli_manager import ProjectExistsError
 
 app = typer.Typer()
 state = {"verbose": False}
