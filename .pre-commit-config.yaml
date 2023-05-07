@@ -12,6 +12,10 @@ repos:
     rev: 5.12.0
     hooks:
     -   id: isort
+-   repo: https://github.com/asottile/reorder_python_imports
+    rev: v3.9.0
+    hooks:
+    - id: reorder-python-imports
 -   repo: https://github.com/psf/black
     rev: 23.3.0
     hooks:
@@ -20,12 +24,16 @@ repos:
     rev: 6.0.0
     hooks:
     -   id: flake8
+        additional_dependencies:
+            -   flake8-bugbear
+            -   flake8-comprehensions
+            -   flake8-docstrings
 -   repo: https://github.com/pre-commit/mirrors-pylint
     rev: v3.0.0a5
     hooks:
     -   id: pylint
         files: .
-        exclude: (?x)^(docs/conf.py)$
+        exclude: (?x)^(docs/source/conf.py)$
         args:
             - --disable=import-error,no-member
             - --max-locals=20
@@ -45,11 +53,6 @@ repos:
     rev: 1.7.5
     hooks:
     -   id: bandit
--   repo: https://github.com/pycqa/pydocstyle
-    rev: 6.3.0
-    hooks:
-    -   id: pydocstyle
-        exclude: (?x)^(docs/conf.py)$
 -   repo: https://github.com/codespell-project/codespell
     rev: v2.2.4
     hooks:
@@ -58,7 +61,3 @@ repos:
     rev: v1.6.5
     hooks:
     -   id: docformatter
--   repo: https://github.com/pre-commit/mirrors-autopep8
-    rev: v2.0.2
-    hooks:
-    -   id: autopep8
