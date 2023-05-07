@@ -1,4 +1,2 @@
-# SPDX-FileCopyrightText: 2023-present Anand Chavan <anandc8788@gmail.com>
-#
-# SPDX-License-Identifier: MIT
+"""Defines the package version for savvy_rest."""
 __version__ = "0.0.1"
