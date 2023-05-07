@@ -1,3 +1,5 @@
+from typing import List
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -6,22 +8,21 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Savvy REST'
-copyright = '2023, QA Toolist'
-author = 'QA Toolist'
+project: str = 'Savvy REST'
+copyright: str = '2023, QA Toolist'
+author: str = 'QA Toolist'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions: List[str] = []
 
-templates_path = ['_templates']
-exclude_patterns = []
-
+templates_path: List[str] = ['_templates']
+exclude_patterns: List[str] = []
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+html_theme: str = 'alabaster'
+html_static_path: List[str] = ['_static']
