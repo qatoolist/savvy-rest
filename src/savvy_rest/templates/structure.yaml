@@ -1,0 +1,28 @@
+folders:
+  - path: app
+    files:
+      - __init__.py
+      - app.py
+      - app.yaml
+  - path: config
+    files:
+      - qa.yaml
+      - stage.yaml
+      - prod.yaml
+  - path: routes
+    files:
+      - __init__.py
+
+templates:
+  - name: app.j2
+    path: app/app.py
+  - name: app_yaml.j2
+    path: app/app.yaml
+  - name: qa_yaml.j2
+    path: config/qa.yaml
+  - name: stage_yaml.j2
+    path: config/stage.yaml
+  - name: prod_yaml.j2
+    path: config/prod.yaml
+  - name: runner.j2
+    path: runner.py
