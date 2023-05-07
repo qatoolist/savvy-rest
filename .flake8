@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 120
+exclude = .git,__pycache__,.venv,venv,docs/source/conf.py,old,build,dist
+ignore = E501,D100,D101,D102,D103,D104,D105,D106,D107,D205,D401,D202,D400,D200,E203,W503

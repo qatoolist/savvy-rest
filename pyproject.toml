@@ -1,17 +1,20 @@
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
 
 [project]
 name = "savvy-rest"
-dynamic = ["version"]
-description = ''
+dynamic = ["version", "dependencies"]
+description = 'A comprehensive framework for testing RESTful APIs.'
 readme = "README.md"
 requires-python = ">=3.7"
 license = "MIT"
 keywords = []
 authors = [
-  { name = "Anand Chavan", email = "anandc8788@gmail.com" },
+  { name = "QA Toolist", email = "qatoolist@gmail.com" },
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -24,15 +27,32 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+
+[project.scripts]
+routestpy = "restez.cli.cli:app"
 
 [project.urls]
-Documentation = "https://github.com/unknown/savvy-rest#readme"
-Issues = "https://github.com/unknown/savvy-rest/issues"
-Source = "https://github.com/unknown/savvy-rest"
+Homepage = "https://github.com/qatoolist/savvy-rest"
+Documentation = "https://github.com/qatoolist/savvy-rest#readme"
+Issues = "https://github.com/qatoolist/savvy-rest/issues"
+Source = "https://github.com/qatoolist/savvy-rest"
+Repository = "https://github.com/qatoolist/savvy-rest"
+Changelog = "https://github.com/qatoolist/savvy-rest/releases"
+
+[tool.isort]
+profile = "black"
 
 [tool.hatch.version]
 path = "src/savvy_rest/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+  "/docs",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/savvy_rest"]
 
 [tool.hatch.envs.default]
 dependencies = [
