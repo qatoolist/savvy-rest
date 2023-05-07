@@ -10,6 +10,7 @@ from typing_extensions import Annotated
 from .cli_manager import CLIManager
 from .cli_manager import ProjectExistsError
 
+cwd = Path.cwd()
 app = typer.Typer()
 state = {"verbose": False}
 FuncT = TypeVar("FuncT", bound=Callable[..., Any])
@@ -32,7 +33,7 @@ def new_project(
     project_name: Annotated[str, typer.Argument(help="The name of the new project.")],
     project_dir: Annotated[
         Path, typer.Option(..., help="The project directory path. Default is the current directory.")
-    ] = Path.cwd(),
+    ] = cwd,
 ) -> None:
     """Create a new savvy-rest project."""
     if project_dir is None:
